@@ -35,5 +35,5 @@
 
 ## Miscellany
 
--   Zippers
--   [Fast and Loose Reasoning is Morally Correct](citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.59.8232)
+-   [Zippers](http://en.wikibooks.org/wiki/Haskell/Zippers)
+-   [Fast and Loose Reasoning is Morally Correct](http://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.59.8232)
