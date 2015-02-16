@@ -1,2 +1,2 @@
-# sigplan
-Sig Plan Meeting Minutes and Stuff
+# SIGPLAN
+UIUC ACM SIGPLAN Meeting Minutes and Stuff

@@ -4,18 +4,18 @@
 
 # Todays Agenda
 
--   [X] Vote on moving on to okasaki's purely functional datastructures
+-   [X] Vote on moving on to Purely Functional Data Structures (by Chris Okasaki)
     -   All in favor
--   [X] Start on basic amortization and persistence via Lazy Evaluation
+-   [X] Start on basic amortization and persistence via lazy evaluation
 
-## Okaskai's Purely Functional Datastructures
+## Purely Functional Data Structures
 
 ### Speaker: Remy
 
 ### SML
 
--   There exists a haskell appendix rewriting most of this
--   $foo deotes a lazy evaluation of foo
+-   There exists a Haskell appendix rewriting most of this
+-   $foo denotes a lazy evaluation of foo (analogous to BangPatterns in Haskell)
 
 ### Amortization
 
@@ -25,10 +25,15 @@
 
 ### Call by _
 
--   Call by Val: Strict
+-   Call by Value: Strict
 -   Call by Name: Lazy
--   Call by Need: Lazy + Ammotization
+-   Call by Need: Lazy + Amortization
 
-### Amortization Persistence and Lazyness
+### Amortization, Persistence, and Laziness
 
 -   Reformulate amortization methods allowing for laziness
+
+## Miscellany
+
+-   Zippers
+-   [Fast and Loose Reasoning is Morally Correct](citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.59.8232)
