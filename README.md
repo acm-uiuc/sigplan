@@ -22,3 +22,5 @@
 * [2015-10-04](minutes/minutes-2015-10-04.md)
 * [2015-10-11](minutes/minutes-2015-10-11.md)
 * [2015-10-25](minutes/minutes-2015-10-25.md)
+* [2016-01-24](minutes/minutes-2016-01-24.md)
+* [2016-02-07](minutes/minutes-2016-02-07.md)
