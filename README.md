@@ -25,3 +25,4 @@
 * [2016-01-24](minutes/minutes-2016-01-24.md)
 * [2016-02-07](minutes/minutes-2016-02-07.md)
 * [2016-02-14](minutes/minutes-2016-02-14.md)
+* [2016-02-28](minutes/minutes-2016-02-28.md)
