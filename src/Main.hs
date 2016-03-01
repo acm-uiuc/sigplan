@@ -14,7 +14,9 @@ postCtx = dateField "date" "%B %e, %Y" <> defaultContext
 
 main :: IO ()
 main = hakyllWith hconfig $ do
-  match (fromList ["CNAME", "images/*"]) $ do
+  match "CNAME" $ route idRoute >> compile copyFileCompiler
+
+  match "images/*" $ do
     route   idRoute
     compile copyFileCompiler
 
@@ -22,7 +24,7 @@ main = hakyllWith hconfig $ do
     route   idRoute
     compile compressCssCompiler
 
-  match (fromList ["about.rst", "contact.markdown"]) $ do
+  match (fromList ["about.md", "contact.md"]) $ do
     route   $ setExtension "html"
     compile $ pandocCompiler
       >>= loadAndApplyTemplate "templates/default.html" defaultContext
