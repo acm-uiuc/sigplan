@@ -15,12 +15,12 @@ dependencies:
     - sudo apt-get update
     - sudo apt-get install gcc lua5.2 liblua5.2-0 liblua5.2-dev
     - stack --no-terminal setup
-    - stack --no-terminal install hslua --flag "hslua:system-lua"
-    - stack --no-terminal install --only-dependencies --flag "hslua:system-lua"
+    - stack --no-terminal install hslua
+    - stack --no-terminal install --only-dependencies
 
 test:
   override:
-    - stack --no-terminal install --only-dependencies --flag "hslua:system-lua"
+    - stack --no-terminal install --only-dependencies
     - stack --no-terminal build
   post:
     - git submodule init
