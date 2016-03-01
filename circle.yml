@@ -14,8 +14,8 @@ dependencies:
   override:
     - sudo apt-get install lua5.2
     - stack --no-terminal setup
-    - stack --no-terminal install hslua --constraint="hslua +system-lua"
-    - stack --no-terminal install --only-dependencies --constraint="hslua +system-lua"
+    - stack --no-terminal install hslua --flag "hslua:system-lua"
+    - stack --no-terminal install --only-dependencies --flag "hslua:system-lua"
 
 test:
   override:
