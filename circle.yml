@@ -13,7 +13,7 @@ dependencies:
     - test -e /tmp/dl && sudo mv /tmp/stack-1.0.4-linux-x86_64/stack /usr/bin
     - rm /tmp/dl
     - sudo apt-get update
-    - sudo apt-get install gcc lua5.2 liblua5.2 liblua5.2-dev
+    - sudo apt-get install gcc lua5.2 liblua5.2-0 liblua5.2-dev
     - stack --no-terminal setup
     - stack --no-terminal install hslua --flag "hslua:system-lua"
     - stack --no-terminal install --only-dependencies --flag "hslua:system-lua"
