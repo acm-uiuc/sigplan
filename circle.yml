@@ -7,13 +7,13 @@ dependencies:
     - "/usr/bin/stack"
     - "~/.stack"
     - ".stack-work"
-  pre:
+  override:
     - if ! test -x /usr/bin/stack; then touch /tmp/dl; fi
     - test -e /tmp/dl && curl -L https://github.com/commercialhaskell/stack/releases/download/v1.0.4/stack-1.0.4-linux-x86_64.tar.gz | tar zx -C /tmp
     - test -e /tmp/dl && sudo mv /tmp/stack-1.0.4-linux-x86_64/stack /usr/bin
     - rm /tmp/dl
-  override:
-    - sudo apt-get install lua5.2 liblua5.2 liblua5.2-dev
+    - sudo apt-get update
+    - sudo apt-get install gcc4.8 lua5.2 liblua5.2 liblua5.2-dev
     - stack --no-terminal setup
     - stack --no-terminal install hslua --flag "hslua:system-lua"
     - stack --no-terminal install --only-dependencies --flag "hslua:system-lua"
