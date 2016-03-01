@@ -7,7 +7,7 @@ import           Data.Monoid
 import           Hakyll
 
 hconfig :: Configuration
-hconfig = def { providerDirectory = "site" }
+hconfig = def { providerDirectory = "static" }
 
 postCtx :: Context String
 postCtx = dateField "date" "%B %e, %Y" <> defaultContext
