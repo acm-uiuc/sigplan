@@ -8,7 +8,7 @@ dependencies:
     - "~/.stack"
     - ".stack-work"
   pre:
-    - curl -L https://github.com/commercialhaskell/stack/releases/download/v1.0.4/stack-1.0.4-linux-x86_64.tar.gz | tar zx -C /tmp
+    - if ! test -x /usr/bin/stack; then curl -L https://github.com/commercialhaskell/stack/releases/download/v1.0.4/stack-1.0.4-linux-x86_64.tar.gz | tar zx -C /tmp; fi
     - sudo mv /tmp/stack-1.0.4-linux-x86_64/stack /usr/bin
   override:
     - sudo apt-get install lua5.2
