@@ -8,8 +8,9 @@ dependencies:
     - "~/.stack"
     - ".stack-work"
   pre:
-    - if ! test -x /usr/bin/stack; then curl -L https://github.com/commercialhaskell/stack/releases/download/v1.0.4/stack-1.0.4-linux-x86_64.tar.gz | tar zx -C /tmp; fi
-    - sudo mv /tmp/stack-1.0.4-linux-x86_64/stack /usr/bin
+    - if ! test -x /usr/bin/stack; then touch /tmp/dl; fi
+    - test -e /tmp/dl && curl -L https://github.com/commercialhaskell/stack/releases/download/v1.0.4/stack-1.0.4-linux-x86_64.tar.gz | tar zx -C /tmp
+    - test -e /tmp/dl && sudo mv /tmp/stack-1.0.4-linux-x86_64/stack /usr/bin; fi
   override:
     - sudo apt-get install lua5.2
     - stack --no-terminal setup
