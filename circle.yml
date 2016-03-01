@@ -8,23 +8,20 @@ machine:
     stackVersion:  1.0.4
     stackPlatform: linux
     stackArch:     x86_64
-    foo:           baz
-    bar:           $foo-quux
+    stackRepoURL:  $githubURL/$stackOwner/$stackRepo
+    stackDir:      stack-$stackVersion-$stackPlatform-$stackArch
+    stackRelease:  $stackDir.tar.gz
+    stackDownload: $stackRepoURL/releases/download/v$stackVersion/$stackRelease
 
 dependencies:
   cache_directories:
     - "/usr/bin/stack"
     - "~/.stack"
+    - "~/$stackDir"
     - ".stack-work"
   override:
-    - echo "$githubURL/$tackOwner/$stackRepo/releases/download/v$stackVersion/stack-$stackVersion-$stackPlatform-$stackArch.tar.gz"
-    - echo "$foo"
-    - echo "$bar"
-    - exit -1
-    - if ! test -x /usr/bin/stack; then touch /tmp/dl; fi
-    - test -e /tmp/dl && curl -L  | tar zx -C /tmp
-    - test -e /tmp/dl && sudo mv /tmp/stack-1.0.4-linux-x86_64/stack /usr/bin
-    - test -e /tmp/dl && rm /tmp/dl
+    - test -e /usr/bin/stack || curl -L $stackDownload | tar zx -C ~
+    - test -e /usr/bin/stack || sudo cp ~/$stackDir/stack /usr/bin
     - sudo apt-get update
     - sudo apt-get install gcc lua5.2 liblua5.2-0 liblua5.2-dev
     - stack --no-terminal setup
