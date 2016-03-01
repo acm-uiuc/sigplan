@@ -9,4 +9,5 @@ executable site
                   , hakyll       == 4.7.*
                   , data-default == 0.5.*
   ghc-options:      -threaded
+                    -j8 -O0
   default-language: Haskell2010
