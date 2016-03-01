@@ -4,7 +4,7 @@ build-type:         Simple
 cabal-version:      >= 1.10
 
 executable site
-  main-is:          site.hs
+  main-is:          src/Main.hs
   build-depends:    base         == 4.*
                   , hakyll       == 4.7.*
                   , data-default == 0.5.*

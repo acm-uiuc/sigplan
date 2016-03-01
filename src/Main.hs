@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Site where
+module Main where
 
 import           Data.Default
 import           Data.Monoid
@@ -8,6 +8,9 @@ import           Hakyll
 
 hconfig :: Configuration
 hconfig = def { providerDirectory = "site" }
+
+postCtx :: Context String
+postCtx = dateField "date" "%B %e, %Y" <> defaultContext
 
 main :: IO ()
 main = hakyllWith hconfig $ do
@@ -59,10 +62,3 @@ main = hakyllWith hconfig $ do
         >>= relativizeUrls
 
   match "templates/*" $ compile templateCompiler
-
-
---------------------------------------------------------------------------------
-postCtx :: Context String
-postCtx =
-    dateField "date" "%B %e, %Y" `mappend`
-    defaultContext
