@@ -15,13 +15,12 @@ machine:
 
 dependencies:
   cache_directories:
-    - "/usr/bin/stack"
     - "~/.stack"
-    - "~/$stackDir"
     - ".stack-work"
+    - "~/$stackDir"
   override:
-    - test -e /usr/bin/stack || curl -L $stackDownload | tar zx -C ~
-    - test -e /usr/bin/stack || sudo cp ~/$stackDir/stack /usr/bin
+    - test -d ~/$stackDir || curl -L $stackDownload | tar zx -C ~
+    - sudo cp ~/$stackDir/stack /usr/bin
     - sudo apt-get update
     - sudo apt-get install gcc lua5.2 liblua5.2-0 liblua5.2-dev
     - stack --no-terminal setup
