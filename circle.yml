@@ -25,7 +25,7 @@ test:
     - git submodule init
     - git submodule update
     - cd _site/ && git checkout gh-pages
-    - $(stack path --dist-dir)/build/site/site
+    - $(stack path --dist-dir)/build/site/site build
 
 deployment:
   production:
