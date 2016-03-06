@@ -18,10 +18,10 @@
       }
     </style>
     <!--[if lte IE 8]>
-        <link rel="stylesheet" href="css/side-menu-old-ie.css" />
+        <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css" />
         <![endif]-->
     <!--[if gt IE 8]><!-->
-        <link rel="stylesheet" href="css/side-menu.css" />
+        <link rel="stylesheet" href="css/layouts/side-menu.css" />
         <!--<![endif]-->
   </head>
   <body>
@@ -35,17 +35,13 @@
 
           <ul class="pure-menu-list">
             <li class="pure-menu-item">
-              <a href="/"
-                 class="pure-menu-link">Home</a></li>
+              <a id="m1" href="#" class="pure-menu-link">Home</a></li>
             <li class="pure-menu-item">
-              <a href="/projects.html"
-                 class="pure-menu-link">Projects</a></li>
+              <a id="m2" href="#" class="pure-menu-link">Projects</a></li>
             <li class="pure-menu-item">
-              <a href="/minutes.html"
-                 class="pure-menu-link">Minutes</a></li>
+              <a id="m3" href="#" class="pure-menu-link">Minutes</a></li>
             <li class="pure-menu-item">
-              <a href="/meetings.html"
-                 class="pure-menu-link">Meeting Info</a></li>
+              <a id="m4" href="#" class="pure-menu-link">Meeting Info</a></li>
           </ul>
         </div>
       </div>
@@ -53,15 +49,21 @@
       <div id="main">
         <div class="header">
           <img class="pure-img-responsive"
-               src="images/logo.png" alt="UIUC ACM SIGPLAN logo" />
+               src="img/logo.png" alt="UIUC ACM SIGPLAN logo" />
+          <br />
+          <br />
         </div>
 
         <br />
         <br />
         
         <div class="content">
-          <h2 id="title">$title$</h2>
-          $body$
+          <p>
+            UIUC ACM SIGPLAN is a special-interest group within the University
+            of Illinois at Urbana-Champaign Association of Computing Machinery,
+            targeted towards programming language theory, formal verification,
+            functional programming, etc.
+          </p>
         </div>
       </div>
     </div>

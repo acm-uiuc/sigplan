@@ -20,11 +20,18 @@ main = hakyllWith hconfig $ do
     route   idRoute
     compile copyFileCompiler
 
+  match "js/*" $ do
+    route   idRoute
+    compile copyFileCompiler
+
   match "css/*" $ do
     route   idRoute
     compile compressCssCompiler
 
-  match (fromList ["about.md", "contact.md"]) $ do
+  match (fromList [ "projects.md"
+                  , "minutes.md"
+                  , "meetings.md"
+                  ]) $ do
     route   $ setExtension "html"
     compile $ pandocCompiler
       >>= loadAndApplyTemplate "templates/default.html" defaultContext
