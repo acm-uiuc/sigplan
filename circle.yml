@@ -33,8 +33,9 @@ test:
   post:
     - git submodule init
     - git submodule update
-    - cd _site/ && git checkout gh-pages
+    - cd deploy && git checkout gh-pages
     - $(stack path --dist-dir)/build/site/site build
+    - cp -f -R _site/* deploy/
 
 deployment:
   production:
@@ -42,11 +43,11 @@ deployment:
     commands:
       - git config --global user.email circleci@circleci
       - git config --global user.name CircleCI
-      - cd _site/ && git status
-      - cd _site/ && git add --all
-      - cd _site/ && git commit -m "Update (`date '+%F %T %Z'`) [ci skip]"
-      - cd _site/ && git push origin gh-pages
+      - cd deploy/ && git status
+      - cd deploy/ && git add --all
+      - cd deploy/ && git commit -m "Update (`date '+%F %T %Z'`) [ci skip]"
+      - cd deploy/ && git push origin gh-pages
       - git status
-      - git add _site/
+      - git add deploy/
       - git commit -m "Update _site (`date '+%F %T %Z'`) [ci skip]"
       - git push origin hakyll
