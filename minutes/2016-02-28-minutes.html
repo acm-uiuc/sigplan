@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Home page for UIUC ACM SIGPLAN" />
+    <title>2016 Meeting #10</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto" />
+    <link rel="stylesheet" href="//yui.yahooapis.com/pure/0.6.0/pure-min.css" />
+    <link rel="stylesheet" href="../css/default.css" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/highlight.css" />
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="../js/highlight.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="/css/side-menu-old-ie.css" />
+        <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="../css/side-menu.css" />
+        <!--<![endif]-->
+  </head>
+  <body>
+
+    <div id="layout">
+      <a href="#menu" id="menuLink" class="menu-link"><span id="vent"></span></a>
+
+      <div id="menu">
+        <div class="pure-menu">
+          <a class="pure-menu-heading" href="#">SIGPLAN</a>
+
+          <ul class="pure-menu-list">
+            <li class="pure-menu-item">
+              <a href="../" class="pure-menu-link">Home</a></li>
+            <li class="pure-menu-item">
+              <a href="../projects.html" class="pure-menu-link">Projects</a></li>
+            <li class="pure-menu-item">
+              <a href="../archive.html" class="pure-menu-link">Minutes</a></li>
+            <li class="pure-menu-item">
+              <a href="../meetings.html" class="pure-menu-link">Meeting Info</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="main">
+        <div class="content">
+          <h2 id="title">2016 Meeting #10</h2>
+          <hr />
+          <div class="info">
+  Posted on February 28, 2016
+  
+</div>
+
+<h2 id="attendance">Attendance</h2>
+<ul>
+<li>Remy Goldschmidt</li>
+<li>Sebastian Conybeare</li>
+<li>Ayberk Tosun</li>
+<li>Andrew D'Angelo</li>
+<li>Phillip Harris</li>
+</ul>
+<h2 id="discussion">Discussion</h2>
+<ul>
+<li>General discussion, followed by a vote to decide what we should do:
+<ul>
+<li>Watch <a href="https://www.youtube.com/watch?v=T88TDS7L5DY">The Unreasonable Effectiveness of Lens</a></li>
+<li>Watch <a href="https://www.youtube.com/watch?v=hIZxTQP1ifo">Typeclasses vs The World</a></li>
+<li>Something else</li>
+</ul></li>
+<li>We chose the first option.</li>
+<li>Lens
+<ul>
+<li><a href="https://hackage.haskell.org/package/lens">Hackage page for lens</a></li>
+<li>Useful tips on using <code>lens</code> in practice:
+<ul>
+<li><a href="https://hackage.haskell.org/package/lens/docs/Control-Lens-Cons.html"><code>Control.Lens.Cons</code></a> --- useful for stream-manipulating functions that are generic over <code>Text</code>, <code>ByteString</code>, <code>[a]</code>, <code>Vector a</code>, <code>Seq a</code>, etc.</li>
+<li><a href="https://hackage.haskell.org/package/lens/docs/Control-Lens-Plated.html"><code>Control.Lens.Plated</code></a> --- contains generic traversals (ana/catamorphisms) that work well with other things in <code>lens</code> and don't require incurring any new dependencies</li>
+<li><a href="https://hackage.haskell.org/package/lens/docs/Control-Lens-TH.html"><code>Control.Lens.TH</code></a> --- pretty much essential for using <code>lens</code> in practice; particularly useful are the <code>makeLenses</code> and <code>makeClassy</code> Template Haskell macros.</li>
+</ul></li>
+<li><a href="https://lens.github.io">lens.github.io</a></li>
+</ul></li>
+<li>Pipes
+<ul>
+<li><a href="https://hackage.haskell.org/package/pipes">Hackage page for pipes</a></li>
+<li>Useful <code>pipes</code>-related libraries:
+<ul>
+<li><a href="https://hackage.haskell.org/package/pipes-safe">pipes-safe</a>, <a href="https://hackage.haskell.org/package/pipes-parse">pipes-parse</a>, <a href="https://hackage.haskell.org/package/pipes-concurrency">pipes-concurrency</a></li>
+</ul></li>
+<li>We worked on an example of how one would use an hypothetical web server that has a API consisting of a tuple of a <code>Producer Req IO ()</code> and a <code>Consumer Resp IO ()</code>.
+<ul>
+<li>The source code for that example is in the appendix</li>
+</ul></li>
+</ul></li>
+<li>Miscellaneous
+<ul>
+<li><a href="https://arxiv.org/pdf/0908.1787v1.pdf">Quantum Picturalism</a>, <a href="https://ncatlab.org/nlab/show/string+diagram">string diagrams</a>, <a href="https://en.wikipedia.org/wiki/Monoidal_category">monoidal categories</a></li>
+</ul></li>
+</ul>
+<h2 id="appendix-----example-pipes-code">Appendix --- Example Pipes Code</h2>
+<p>Here is a link to the <a href="https://gist.github.com/c097e2ef0490579b363d">gist</a>, but I thought a backup would be good in case it ever becomes unavailable:</p>
+<pre class="haskell"><code>module Main where
+
+import           Control.Monad
+import           Control.Monad.State.Strict
+import           Data.Char
+import           Data.Monoid
+import           Pipes
+import qualified Pipes.Prelude              as P
+
+data Req = Req String
+         deriving (Eq, Show, Read)
+
+data Resp = Resp String
+          deriving (Eq, Show, Read)
+
+iterateP :: (Monad m) =&gt; (a -&gt; a) -&gt; a -&gt; Producer a m ()
+iterateP f x = yield x &gt;&gt; iterateP f (f x)
+
+consumeP :: (Show a) =&gt; Consumer a IO ()
+consumeP = P.map show &gt;-&gt; P.stdoutLn
+
+serverP :: Producer Req  IO ()
+serverC :: Consumer Resp IO ()
+(serverP, serverC) = (iterateP (+1) 1 &gt;-&gt; P.map toReq, consumeP)
+  where
+    toReq :: Int -&gt; Req
+    toReq x = Req $ &quot;request #&quot; &lt;&gt; show x
+
+toUpperStr :: String -&gt; String
+toUpperStr = fmap toUpper
+
+application :: (Monad m) =&gt; Req -&gt; StateT Int m Resp
+application (Req s) = return $ Resp $ toUpperStr s
+
+makePipe :: (Monad m) =&gt; (a -&gt; Pipe a b m b) -&gt; Pipe a b m ()
+makePipe f = forever $ await &gt;&gt;= f &gt;&gt;= yield
+
+applicationPipe :: (Monad m) =&gt; Pipe Req Resp (StateT Int m) ()
+applicationPipe = makePipe (lift . application)
+
+main :: IO ()
+main = void
+       $ flip runStateT 0
+       $ runEffect
+       $ hoist lift serverP &gt;-&gt; applicationPipe &gt;-&gt; hoist lift serverC</code></pre>
+
+        </div>
+      </div>
+    </div>
+    <script src="../js/ui.js"></script>
+  </body>
+</html>
