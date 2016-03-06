@@ -16,3 +16,11 @@ a:hover {
 a:active {
     text-decoration: none;
 }
+
+#menu, #menu li {
+    background-color: #3f3f3f;
+}
+
+#menu a {
+    color: #eee;
+}
