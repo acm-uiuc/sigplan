@@ -32,4 +32,5 @@
         toggleClass(menuLink, active);
     };
 
+    $("table").addClass("pure-table");
 }(this, this.document));

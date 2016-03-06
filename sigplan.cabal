@@ -5,9 +5,11 @@ cabal-version:      >= 1.10
 
 executable site
   main-is:          src/Main.hs
-  build-depends:    base         == 4.*
-                  , hakyll       == 4.7.*
-                  , data-default == 0.5.*
+  build-depends:    base              == 4.*
+                  , hakyll            == 4.7.*
+                  , data-default      == 0.5.*
+                  , pandoc            == 1.16.*
+                  , highlighting-kate == 0.6.*
   ghc-options:      -threaded
                     -j8 -O0 -dynamic
   default-language: Haskell2010

@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+          "//www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Home page for UIUC ACM SIGPLAN" />
-    <title>UIUC ACM SIGPLAN</title>
+    <title>$title$</title>
     <link rel="stylesheet" type="text/css"
-          href="https://fonts.googleapis.com/css?family=Roboto" />
+          href="//fonts.googleapis.com/css?family=Roboto" />
     <link rel="stylesheet"
-          href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css" />
-    <style>
-      html, button, input, select, textarea,
-      .pure-g [class *= "pure-u"] {
-      font-family: Roboto, sans-serif;
-      }
-    </style>
+          href="//yui.yahooapis.com/pure/0.6.0/pure-min.css" />
+    <link rel="stylesheet" href="/css/default.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/highlight.css" />
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="/js/highlight.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
     <!--[if lte IE 8]>
-        <link rel="stylesheet" href="css/side-menu-old-ie.css" />
+        <link rel="stylesheet" href="/css/side-menu-old-ie.css" />
         <![endif]-->
     <!--[if gt IE 8]><!-->
-        <link rel="stylesheet" href="css/side-menu.css" />
+        <link rel="stylesheet" href="/css/side-menu.css" />
         <!--<![endif]-->
   </head>
   <body>
@@ -41,7 +43,7 @@
               <a href="/projects.html"
                  class="pure-menu-link">Projects</a></li>
             <li class="pure-menu-item">
-              <a href="/minutes.html"
+              <a href="/archive.html"
                  class="pure-menu-link">Minutes</a></li>
             <li class="pure-menu-item">
               <a href="/meetings.html"
@@ -51,20 +53,13 @@
       </div>
 
       <div id="main">
-        <div class="header">
-          <img class="pure-img-responsive"
-               src="images/logo.png" alt="UIUC ACM SIGPLAN logo" />
-        </div>
-
-        <br />
-        <br />
-        
         <div class="content">
           <h2 id="title">$title$</h2>
+          <hr />
           $body$
         </div>
       </div>
     </div>
-    <script src="js/ui.js"></script>
+    <script src="/js/ui.js"></script>
   </body>
 </html>
