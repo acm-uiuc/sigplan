@@ -2,4 +2,4 @@
 title: Projects
 ---
 
-This is where projects will go.
+We don't have any projects yet, sorry!
