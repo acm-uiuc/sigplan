@@ -100,7 +100,7 @@ appears on the left side of the page.
 
 /*
     All anchors inside the menu should be styled like this.
-    */
+*/
 
 #menu a {
     color: #999;
@@ -110,7 +110,7 @@ appears on the left side of the page.
 
 /*
     Remove all background/borders, since we are applying them to #menu.
-    */
+*/
 
 #menu .pure-menu,
 #menu .pure-menu ul {
@@ -120,7 +120,7 @@ appears on the left side of the page.
 
 /*
     Add that light border to separate items into groups.
-    */
+*/
 
 #menu .pure-menu ul,
 #menu .pure-menu .menu-item-divided {
@@ -129,7 +129,7 @@ appears on the left side of the page.
 
 /*
         Change color of the anchor links on hover/focus.
-        */
+*/
 
 #menu .pure-menu li a:hover,
 #menu .pure-menu li a:focus {
@@ -138,7 +138,7 @@ appears on the left side of the page.
 
 /*
     This styles the selected menu item `<li>`.
-    */
+*/
 
 #menu .pure-menu-selected,
 #menu .pure-menu-heading {
@@ -147,7 +147,7 @@ appears on the left side of the page.
 
 /*
         This styles a link within a selected menu item `<li>`.
-        */
+*/
 
 #menu .pure-menu-selected a {
     color: #fff;
@@ -155,7 +155,7 @@ appears on the left side of the page.
 
 /*
     This styles the menu heading.
-    */
+*/
 
 #menu .pure-menu-heading {
     font-size: 110%;
