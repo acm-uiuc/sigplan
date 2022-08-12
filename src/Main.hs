@@ -6,7 +6,7 @@ import           Data.Default
 import           Data.Monoid
 import           Data.Typeable
 import           Hakyll
-import           Text.Highlighting.Kate.Styles (zenburn)
+import           Text.Pandoc.Highlighting (zenburn)
 import           Text.Pandoc.Options
 
 hconfig :: Configuration
@@ -22,10 +22,7 @@ customPandocCompiler = pandocCompilerWith ro wo
     ro = def
 
     wo :: WriterOptions
-    wo = def { writerHighlight      = False
-             , writerHighlightStyle = zenburn
-             , writerHtml5          = True
-             }
+    wo = def { writerHighlightStyle = Just zenburn }
 
 minutesList :: Compiler [Item String]
 minutesList = recentFirst =<< loadAll "minutes/*"
